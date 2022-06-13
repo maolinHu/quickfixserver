@@ -1,0 +1,29 @@
+# 应用名称
+spring:
+  application:
+    name: quickfixserver
+
+server:
+  port: 8085
+
+quickfixj:
+  server:
+    config: classpath:quickfixj-server.cfg
+    auto-startup: true
+    force-disconnect: false
+    phase: 0
+    jmx-enabled: true
+    message-store-factory: memory
+    log-factory: screen
+
+management:
+  endpoint:
+    quickfixjclient:
+      enabled: true
+    quickfixjserver:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
